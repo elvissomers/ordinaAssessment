@@ -6,6 +6,11 @@ public class MyWordFrequency implements WordFrequency{
 
     private int frequency;
 
+    public MyWordFrequency(String word, int frequency) {
+        this.word = word;
+        this.frequency = frequency;
+    }
+
     public String getWord() {
         return word;
     }
