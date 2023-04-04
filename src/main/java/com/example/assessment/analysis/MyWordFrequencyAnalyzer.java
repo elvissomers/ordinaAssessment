@@ -28,6 +28,10 @@ public class MyWordFrequencyAnalyzer implements WordFrequencyAnalyzer{
         WordFrequency[] sortedWords = unsortedMap.entrySet().stream()
                 .sorted(Map.Entry.<String, Integer>comparingByValue().reversed()
                         .thenComparing(Map.Entry.comparingByKey()))
+                .map(entry -> new MyWordFrequency(entry.getKey(), entry.getValue()))
+                .toArray(WordFrequency[]::new);
+
+        return sortedWords;
     }
 
     public int calculateHighestFrequency(String text){
