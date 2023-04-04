@@ -21,6 +21,8 @@ public class MyWordFrequencyAnalyzer implements WordFrequencyAnalyzer{
                 wordMap.put(word, 1);
             }
         }
+
+        return wordMap;
     }
 
     public WordFrequency[] getSortedWords(HashMap<String, Integer> unsortedMap){
