@@ -43,8 +43,9 @@ public class MyWordFrequencyAnalyzer implements WordFrequencyAnalyzer{
     }
     public int calculateFrequencyForWord (String text, String word){
         HashMap<String, Integer> wordMap = getWordMap(text);
+        String inputWord = word.toLowerCase();
 
-        return wordMap.get(word);
+        return wordMap.get(inputWord);
     }
     public WordFrequency[] calculateMostFrequentNWords (String text, int n){
         HashMap<String, Integer> wordMap = getWordMap(text);
