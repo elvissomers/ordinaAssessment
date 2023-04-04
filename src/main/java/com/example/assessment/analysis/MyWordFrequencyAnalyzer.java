@@ -1,10 +1,9 @@
 package main.java.com.example.assessment.analysis;
 
+import main.java.com.example.assessment.domains.MyWordFrequency;
 import main.java.com.example.assessment.domains.WordFrequency;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 public class MyWordFrequencyAnalyzer implements WordFrequencyAnalyzer{
 
@@ -36,13 +35,22 @@ public class MyWordFrequencyAnalyzer implements WordFrequencyAnalyzer{
 
     public int calculateHighestFrequency(String text){
         HashMap<String, Integer> wordMap = getWordMap(text);
+        WordFrequency[] sortedWords = getSortedWords(wordMap);
 
+        return sortedWords[0].getFrequency();
     }
     public int calculateFrequencyForWord (String text, String word){
         HashMap<String, Integer> wordMap = getWordMap(text);
 
         return wordMap.get(word);
     }
-    public WordFrequency[] calculateMostFrequentNWords (String text, int n);
+    public WordFrequency[] calculateMostFrequentNWords (String text, int n){
+        HashMap<String, Integer> wordMap = getWordMap(text);
+        WordFrequency[] sortedWords = getSortedWords(wordMap);
+
+        return Arrays.copyOfRange(sortedWords, 0, n);
+    }
+
+
 
 }
