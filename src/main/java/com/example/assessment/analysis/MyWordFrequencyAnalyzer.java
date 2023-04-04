@@ -8,12 +8,6 @@ import java.util.Map;
 
 public class MyWordFrequencyAnalyzer implements WordFrequencyAnalyzer{
 
-    private HashMap<String, Integer> wordMap;
-
-    public MyWordFrequencyAnalyzer(HashMap<String, Integer> wordMap) {
-        this.wordMap = getWordMap();
-    }
-
     public HashMap<String, Integer> getWordMap(String text){
         String lowerCaseText = text.toLowerCase();
         String[] allWords = lowerCaseText.split("[^a-z]+");
